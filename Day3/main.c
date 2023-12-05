@@ -57,7 +57,7 @@ int main()
 		i++;
 	}
 	fclose(fp);
-	//IsValid Digit + Sum 31165125
+	//IsValid Digit + Sum
 	int sum = 0;
 	sum += GetGearSum(&e.l[0], &e.l[MAX_LINES-1], &e.l[1]);
 	for (int n = 1; n < i; n++)

@@ -96,7 +96,6 @@ int main()
 		printf("Pow : %d\n", pow);
 		fclose(fp);
 	}
-	while (1);
 	return 0;
 }
 
