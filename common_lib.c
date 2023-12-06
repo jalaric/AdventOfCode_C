@@ -18,6 +18,7 @@ void GetLine(char* buffer, char* dest, size_t size)
 	{
 		if (begin != NULL)
 			memcpy(dest, (begin + 1), size_);
+		dest[size_] = 0;
 	}
 }
 

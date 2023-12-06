@@ -1,0 +1,3 @@
+﻿  common_lib.c
+MSVCRTD.lib(exe_main.obj) : error LNK2019: symbole externe non résolu main référencé dans la fonction "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\Users\ALARIC\Documents\ProjetPerso\adventOfCode\AdventOfCode\x64\Debug\Day6.exe : fatal error LNK1120: 1 externes non résolus

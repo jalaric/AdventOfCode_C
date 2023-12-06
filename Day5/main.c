@@ -62,10 +62,9 @@ int main()
 	long long int min = 0x7FFFFFFFFFFFFFFF;
 	//process seeds
 	printf("Seed -> Location\n");
-	for (int o = 0; o < nb_seeds; o+=2) 
+	for (int o = 0; o < nb_seeds; o+=2) //loop should be optimized or multi-threaded
 	{
-		long long int temp = (seeds[o] + seeds[o + 1]);
-		for (long long int p = seeds[o]; p < temp; p++) //part2 loop
+		for (long long int p = seeds[o]; p < (seeds[o] + seeds[o + 1]); p++) //part2 loop
 		{
 			//printf("%10lld ", p);
 			long long int loc = p;
