@@ -1,0 +1,7 @@
+﻿  common_lib.c
+C:\Users\ALARIC\Documents\ProjetPerso\adventOfCode\AdventOfCode\common_lib.c(25,49): warning C4028: paramètre formel 2 différent de la déclaration
+  main.c
+C:\Users\ALARIC\Documents\ProjetPerso\adventOfCode\AdventOfCode\Day5\main.c(36,45): warning C4133: 'fonction' : types incompatibles - de '__int64 [250]' à 'int *'
+C:\Users\ALARIC\Documents\ProjetPerso\adventOfCode\AdventOfCode\Day5\main.c(54,33): warning C4133: 'fonction' : types incompatibles - de '__int64 [3]' à 'int *'
+  Génération de code en cours...
+  Day5.vcxproj -> C:\Users\ALARIC\Documents\ProjetPerso\adventOfCode\AdventOfCode\x64\Debug\Day5.exe

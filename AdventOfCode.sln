@@ -11,6 +11,14 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Day3", "Day3\Day3.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Day4", "Day4\Day4.vcxproj", "{057A3EA8-C872-4282-B95C-45D74852782B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Day5", "Day5\Day5.vcxproj", "{1107B5D9-21A6-4226-940E-25951CE6A44E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonLib", "CommonLib", "{CD59D5CA-C1CA-4FA7-BC0B-CCFCC9D2C1E3}"
+	ProjectSection(SolutionItems) = preProject
+		common_lib.c = common_lib.c
+		common_lib.h = common_lib.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +59,14 @@ Global
 		{057A3EA8-C872-4282-B95C-45D74852782B}.Release|x64.Build.0 = Release|x64
 		{057A3EA8-C872-4282-B95C-45D74852782B}.Release|x86.ActiveCfg = Release|Win32
 		{057A3EA8-C872-4282-B95C-45D74852782B}.Release|x86.Build.0 = Release|Win32
+		{1107B5D9-21A6-4226-940E-25951CE6A44E}.Debug|x64.ActiveCfg = Debug|x64
+		{1107B5D9-21A6-4226-940E-25951CE6A44E}.Debug|x64.Build.0 = Debug|x64
+		{1107B5D9-21A6-4226-940E-25951CE6A44E}.Debug|x86.ActiveCfg = Debug|Win32
+		{1107B5D9-21A6-4226-940E-25951CE6A44E}.Debug|x86.Build.0 = Debug|Win32
+		{1107B5D9-21A6-4226-940E-25951CE6A44E}.Release|x64.ActiveCfg = Release|x64
+		{1107B5D9-21A6-4226-940E-25951CE6A44E}.Release|x64.Build.0 = Release|x64
+		{1107B5D9-21A6-4226-940E-25951CE6A44E}.Release|x86.ActiveCfg = Release|Win32
+		{1107B5D9-21A6-4226-940E-25951CE6A44E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

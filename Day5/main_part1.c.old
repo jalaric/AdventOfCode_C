@@ -40,7 +40,7 @@ int main()
 		fgets(line, MAX_LINE_LEN, fp);
 		if (line[0] != '\n')
 		{
-			if ( IsNewMap(line, sizeof(line)) )
+			if (IsNewMap(line, sizeof(line)))
 			{
 				if (j != 0)
 				{
@@ -62,24 +62,20 @@ int main()
 	long long int min = 0x7FFFFFFFFFFFFFFF;
 	//process seeds
 	printf("Seed -> Location\n");
-	for (int o = 0; o < nb_seeds; o+=2) 
+	for (int o = 0; o < nb_seeds; o++)
 	{
-		long long int temp = (seeds[o] + seeds[o + 1]);
-		for (long long int p = seeds[o]; p < temp; p++) //part2 loop
+		printf("%10lld ", seeds[o]);
+		long long int loc = seeds[o];
+		//go through maps
+		for (int a = 0; a < i_map + 1; a++)
 		{
-			//printf("%10lld ", p);
-			long long int loc = p;
-			//go through maps
-			for (int a = 0; a < i_map + 1; a++)
-			{
-				loc = ProcessMap(&s_map[a], loc);
-			}
-			if (loc < min)
-			{
-				min = loc;
-			}
-			//printf("%10lld\n", loc);
+			loc = ProcessMap(&s_map[a], loc);
 		}
+		if (loc < min)
+		{
+			min = loc;
+		}
+		printf("%10lld\n", loc);
 	}
 	printf("Minimum location : %lld", min);
 	return 0;
@@ -104,7 +100,7 @@ static bool IsNewMap(char* buffer, size_t size)
 static long long int ProcessMap(struct Map* m, long long int seed)
 {
 	int i = 0;
-	while(m->m[i].len != 0)
+	while (m->m[i].len != 0)
 	{
 		int j = 0;
 		if ((seed >= m->m[i].src_start) &&
