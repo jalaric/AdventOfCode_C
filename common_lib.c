@@ -12,6 +12,8 @@ int IsNumber(char c)
 void GetLine(char* buffer, char* dest, size_t size)
 {
 	char* begin = strchr(buffer, ':');
+	if (begin == NULL)
+		begin = buffer;
 	char* end = strchr(buffer, 0x0A);
 	size_t size_ = end - (begin)-1;
 	if (size_ < size)

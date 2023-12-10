@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Fichiers sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Fichiers de ressources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Fichiers sources\days">
+      <UniqueIdentifier>{dae0bc2e-35d5-4489-9bf3-6d9c93566ade}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\common_lib.c">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="days.c">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="day9.c">
+      <Filter>Fichiers sources\days</Filter>
+    </ClCompile>
+    <ClCompile Include="day1.c">
+      <Filter>Fichiers sources\days</Filter>
+    </ClCompile>
+    <ClCompile Include="day3.c">
+      <Filter>Fichiers sources\days</Filter>
+    </ClCompile>
+    <ClCompile Include="day4.c">
+      <Filter>Fichiers sources\days</Filter>
+    </ClCompile>
+    <ClCompile Include="day5.c">
+      <Filter>Fichiers sources\days</Filter>
+    </ClCompile>
+    <ClCompile Include="day6.c">
+      <Filter>Fichiers sources\days</Filter>
+    </ClCompile>
+    <ClCompile Include="day7.c">
+      <Filter>Fichiers sources\days</Filter>
+    </ClCompile>
+    <ClCompile Include="day8.c">
+      <Filter>Fichiers sources\days</Filter>
+    </ClCompile>
+    <ClCompile Include="day2.c">
+      <Filter>Fichiers sources\days</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="day_list.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="days.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="day1.data">
+      <Filter>Fichiers de ressources</Filter>
+    </None>
+    <None Include="day2.data">
+      <Filter>Fichiers de ressources</Filter>
+    </None>
+    <None Include="day3.data">
+      <Filter>Fichiers de ressources</Filter>
+    </None>
+    <None Include="day4.data">
+      <Filter>Fichiers de ressources</Filter>
+    </None>
+    <None Include="day5.data">
+      <Filter>Fichiers de ressources</Filter>
+    </None>
+    <None Include="day6.data">
+      <Filter>Fichiers de ressources</Filter>
+    </None>
+    <None Include="day7.data">
+      <Filter>Fichiers de ressources</Filter>
+    </None>
+    <None Include="day8.data">
+      <Filter>Fichiers de ressources</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,4 +1,5 @@
 #include "../common_lib.h"
+#include "days.h"
 #pragma warning(disable : 4996)
 
 #define MAX_LINES (2000)
@@ -6,15 +7,22 @@
 
 static long long int Times[MAX_LINE_LEN];
 static long long int Distances[MAX_LINE_LEN];
+static int beat_race = 0;
 
 static __int64 GetDistance(__int64 hold_btn_ms, __int64 step_mm_per_ms, __int64 max_time_ms);
 int GetNumbersInLine_withouSpace(char* line, long long int* array);
 
-int main()
+void InitDay6() {
+}
+void ResultDay6() {
+	printf("Number of beaten races : %d\n", beat_race);
+}
+
+int day6(bool part)
 {
 	FILE* fp;
 	int races = 0;
-	fp = fopen(".data", "r");
+	fp = fopen("day6.data", "r");
 	//get seeds
 	char line[MAX_LINE_LEN] = "";
 	char dest[MAX_LINE_LEN] = "";
@@ -28,7 +36,6 @@ int main()
 	GetLine(line, dest, MAX_LINE_LEN);
 	GetNumbersInLine_withouSpace(dest, Distances);
 	//process
-	int beat_race = 0;
 	for (int i = 0; i < races; i++)
 	{
 		__int64 h_ms = 1;//start at 1 ms hold
@@ -44,7 +51,6 @@ int main()
 			++h_ms;
 		}
 	}
-	printf("Number of beaten races : %d", beat_race);
 	return 0;
 }
 
@@ -71,7 +77,7 @@ int GetNumbersInLine_withouSpace(char* line, long long int* array)
 			num += (line[i] - 0x30);
 			flag = true;
 		}
-		else if(line[i] != ' ')
+		else if (line[i] != ' ')
 		{
 			if (flag == true)
 			{

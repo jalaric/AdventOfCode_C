@@ -1,5 +1,6 @@
 #include "stdio.h"
 #include "string.h"
+#include "days.h"
 #pragma warning(disable : 4996)
 
 #define MAX_LINES (2000)
@@ -19,18 +20,27 @@ static int GetGameLine(char* buffer, char* dest, char separator, size_t size);
 static int GetNumbers(char* buffer, short int* array);
 static int GetScoreLine(short int* array, short int* win);
 
-struct line l;
+static int score = 0;
+static int games = 0;
 
-int main()
+void InitDay4(){
+}
+void ResultDay4() {
+	printf("Score : %d\n", score);
+	printf("Games : %d\n", games);
+}
+
+int day4(bool part)
 {
 	FILE* fp;
-	fp = fopen(".data", "r");
+	struct line l = { 0 };
+	fp = fopen("day4.data", "r");
 	int count_separator = 0;
-	int score = 0;
 	int i = 0;
 	for (int a = 0; a < MAX_LINES; a++)
 		card_coef[a] = 1;
-
+	games = 0;
+	score = 0;
 	while (!feof(fp))
 	{
 		char line[MAX_LINE_LEN] = "";
@@ -41,20 +51,26 @@ int main()
 		count_separator = 0;
 		while (GetGameLine(dest, game, '|', MAX_LINE_LEN))
 		{
-			if(count_separator == 0)
+			if (count_separator == 0)
 				GetNumbers(game, l.win_num);
 			else
 				GetNumbers(game, l.scratch_num);
 			count_separator++;
 		}
-		int temp = GetScoreLine(l.scratch_num, l.win_num);
-		score += temp;
-		for (int x = 1; x < card_coef[i] + 1; x++)
-		{
-			for (int b = 1; b < temp + 1; b++)
+		int temp = GetScoreLine(l.scratch_num, l.win_num, part);
+		if (part) {
+			for (int x = 1; x < card_coef[i] + 1; x++)
 			{
-				card_coef[i + b]++;
+				for (int b = 1; b < temp + 1; b++)
+				{
+					card_coef[i + b]++;
+				}
 			}
+			games += card_coef[i];
+		}
+		else
+		{
+			score += temp;
 		}
 		for (int d = 0; d < MAX_LINE_LEN; d++)
 		{
@@ -63,16 +79,8 @@ int main()
 		}
 		i++;
 	}
+	games--;
 	fclose(fp);
-	//process
-	printf("Score : %d\n", score);
-	int games = 0;
-	for (int c = 0; c < i-1; c++)
-	{
-		games += card_coef[c];
-	}
-	printf("Games : %d\n", games);
-
 	return 0;
 }
 
@@ -121,10 +129,10 @@ static int GetNumbers(char* buffer, short int* array)
 	return 0;
 }
 
-static int GetScoreLine(short int* array, short int* win)
+static int GetScoreLine(short int* array, short int* win, bool part)
 {
 	int score = 0;
-	for (int i = 0; i < MAX_LINE_LEN; i ++)
+	for (int i = 0; i < MAX_LINE_LEN; i++)
 	{
 		for (int j = 0; j < MAX_LINE_LEN; j++)
 		{
@@ -138,8 +146,10 @@ static int GetScoreLine(short int* array, short int* win)
 					}
 					else
 					{
-						//score *= 2; //part1
-						score++; //part 2
+						if(!part)
+							score *= 2; //part1
+						else
+							score++; //part 2
 					}
 				}
 			}
@@ -154,7 +164,6 @@ static int GetGameLine(char* buffer, char* dest, char separator, size_t size)
 	static int flag = 0;
 	char* begin = &buffer[offset];
 	char* end = strchr(begin, separator);
-	//memset(dest, 0, size);
 	if (end != NULL)
 	{
 		size_t size_game = end - (begin);
@@ -184,8 +193,7 @@ static void GetLine(char* buffer, char* dest, size_t size)
 {
 	char* begin = strchr(buffer, ':');
 	char* end = strchr(buffer, 0x0A);
-	size_t size_game = end - (begin) - 1;
-	if(begin != NULL)
+	size_t size_game = end - (begin)-1;
+	if (begin != NULL)
 		memcpy(dest, (begin + 1), size_game);
-	//dest[size_game - 1] = 0;
 }
