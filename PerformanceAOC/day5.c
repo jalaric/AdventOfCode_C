@@ -51,7 +51,7 @@ int day5(bool part)
 	long long int seeds[MAX_LINE_LEN] = { 0 };
 	fgets(line, MAX_LINE_LEN, fp);
 	GetLine(line, dest, MAX_LINE_LEN);
-	int nb_seeds = GetNumbersInLine(dest, seeds);
+	int nb_seeds = GetNumbersInLine(dest, seeds, false);
 	int j = 0;
 	while (!feof(fp))
 	{
@@ -70,7 +70,7 @@ int day5(bool part)
 			else
 			{
 				long long int array[3];
-				GetNumbersInLine(line, array);
+				GetNumbersInLine(line, array, false);
 				s_map[i_map].m[j].dest_start = array[0];
 				s_map[i_map].m[j].src_start = array[1];
 				s_map[i_map].m[j].len = array[2];

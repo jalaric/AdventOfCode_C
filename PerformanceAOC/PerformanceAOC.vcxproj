@@ -169,6 +169,7 @@
     <None Include="day6.data" />
     <None Include="day7.data" />
     <None Include="day8.data" />
+    <None Include="day9.data" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

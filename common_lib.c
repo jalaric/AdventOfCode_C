@@ -25,14 +25,15 @@ void GetLine(char* buffer, char* dest, size_t size)
 }
 
 
-int GetNumbersInLine(char* line, long long int* array)
+int GetNumbersInLine(char* line, long long int* array, bool negative)
 {
 	int i = 0;
 	int j = 0;
 	long long int num = 0;
 	int converted_nb_cnt = 0;
 	bool flag = false;
-	while (line[i] != 0)
+	bool neg = false;
+	while ((line[i] != 0) && (line[i] != '\n'))
 	{
 		if (IsNumber(line[i]) != -1)
 		{
@@ -44,20 +45,33 @@ int GetNumbersInLine(char* line, long long int* array)
 		{
 			if (flag == true)
 			{
-				array[j] = num;
+				if(neg)
+					array[j] = - num;
+				else
+					array[j] = num;
 				j++;
 				num = 0;
 				flag = false;
+				neg = false;
 				converted_nb_cnt++;
+			}
+			else if ((line[i] == '-') && (negative))
+			{
+				neg = true;
+			}
+			else
+			{
+				neg = false;
 			}
 		}
 		i++;
 	}
 	if (flag == true)
 	{
-		array[j] = num;
-		j++;
-		num = 0;
+		if (neg)
+			array[j] = -num;
+		else
+			array[j] = num;
 		converted_nb_cnt++;
 	}
 	return converted_nb_cnt;

@@ -88,5 +88,8 @@
     <None Include="day8.data">
       <Filter>Fichiers de ressources</Filter>
     </None>
+    <None Include="day9.data">
+      <Filter>Fichiers de ressources</Filter>
+    </None>
   </ItemGroup>
 </Project>
